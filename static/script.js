@@ -57,3 +57,17 @@ document.getElementById("send").addEventListener("click", () => {
 
     textArea.value = ""
 })
+
+document.getElementById("message").addEventListener('keydown', () => {
+    
+    if (event.key === "Enter" && !event.shiftKey){
+        event.preventDefault()
+        const message = document.getElementById("message")
+        postMessage({
+            user: "Julián",
+            text: message.value
+        })
+        message.value = ""
+    }
+}
+)
