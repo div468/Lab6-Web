@@ -9,14 +9,27 @@ const getMessages = async () => {
     const response = await fetch("/api/messages")
     const messages = await response.json()
 
+    const imageRegex = /(https?:\/\/\S+\.(?:png|jpg|jpeg|gif|webp))/i
+
     if (messages.length > renderedMessages) {
 
         for (let i = renderedMessages; i < messages.length; i++) {
-            const message = messages[i]
-
             const li = document.createElement("li")
-            li.innerHTML = `<strong>${message.user}:</strong> ${message.text}`
+            const message = messages[i]
+            const match = message.text.match(imageRegex)
 
+            if (match){
+                const text = message.text.replace(match[0], "")
+                li.innerHTML= `<strong> ${message.user}</strong> ${text}
+                <br>
+                <img src= "${match[0]}" style="max-width:200px">
+                `
+            }
+
+            else {
+                li.innerHTML = `<strong>${message.user}:</strong> ${message.text}`
+            }
+            
             ul.append(li)
         }
 
