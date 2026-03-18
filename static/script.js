@@ -20,14 +20,14 @@ const getMessages = async () => {
 
             if (match){
                 const text = message.text.replace(match[0], "")
-                li.innerHTML= `<strong> ${message.user}</strong> ${text}
+                li.innerHTML= `\t<strong>${message.user}</strong> ${text}
                 <br>
                 <img src= "${match[0]}" style="max-width:200px">
                 `
             }
 
             else {
-                li.innerHTML = `<strong>${message.user}:</strong> ${message.text}`
+                li.innerHTML = `\t<strong>${message.user}:</strong> ${message.text}`
             }
             
             ul.append(li)

@@ -1,4 +1,5 @@
 body{
+    background-color: #D694F2;
     display: flex;
     align-content: center;
     flex-direction: column;
@@ -6,7 +7,28 @@ body{
 }
 
 h1{
-    color: gray;
+    color: #2D0140;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-size: 40px;
+    margin: 10px;
+  font-family: "Bitcount Grid Double Ink", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0,
+    "CRSV" 0.5,
+    "ELSH" 0,
+    "ELXP" 0,
+    "SZP1" 0,
+    "SZP2" 0,
+    "XPN1" 0,
+    "XPN2" 0,
+    "YPN1" 0,
+    "YPN2" 0;
 }
 
 #messages{
@@ -15,8 +37,20 @@ h1{
     overflow-y: auto;
 }
 
+#message{
+    border: 2px solid #2D0140;
+    background-color: #8A54BF;
+    width: 95%;
+}
+#send{
+    width: 40%;
+    height: 20px;
+    background-color: #2D0140;
+    color: white;
+}
+
 section{
-    height: 300px;
+    height: 375px;
     width: 95%;
 }
 
@@ -25,5 +59,18 @@ footer{
 }
 
 ul{
-    margin: 2px;
+    background-color: #D694F2;
+    border: 2px solid #2D0140;
+}
+
+li{
+    width: fit-content;
+    margin-bottom: 2px;
+    background-color: #8A54BF;
+    border-radius: 5px;
+}
+
+footer{
+    display: flex;
+    align-content: center;
 }
